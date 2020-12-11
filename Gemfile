@@ -20,6 +20,7 @@ gem 'figaro'
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails'
 end
 
 group :test do
