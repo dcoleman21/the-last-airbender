@@ -1,13 +1,15 @@
 class Member
-  attr_reader :image,
+  attr_reader :photo,
               :name,
               :allies,
+              :enemies,
               :affiliation
 
   def initialize(member_data)
-    @image = member_data[:photoUrl] ? member_data[:photoUrl] : "Unknown"
+    @photo = member_data[:photoUrl]
     @name = member_data[:name]
     @allies = member_data[:allies]
-    @affiliation = member_data[:affiliaton]
+    @enemies = member_data[:enemies]
+    @affiliation = member_data[:affiliation]
   end
 end

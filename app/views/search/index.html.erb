@@ -1,11 +1,28 @@
-<h3> <%= @members.count %> Results</h3>
+<h2>There are <%= @members.count %> members in the <%= @nation %></h2>
 
 <% @members.each do |member| %>
-  <div class="members">
-    <img class="image" src=<%= member.image %>  alt="member" width="400" height="400">
-    <br>
-    <p class="name"> Name: <%= member.name %></p>
-    <p class="allies">Allies: <%= member.allies%></p>
-    <p class="affiliation">Affilliation: <%= member.affiliation %></p>
-  </div>
+<section class='member'>
+    <h4 class='name'><%= member.name %></h4>
+    <div class='photo'><%= image_tag("#{member.photo}") %></div>
+    <div class='allies'>
+    <h4>Allies</h4>
+    <ul>
+    <% member.allies.each do |ally|%>
+        <li><%= ally %></li>
+    <% end %>
+    </ul>
+    </div>
+    <div class='enemies'>
+    <h4>Enemies</h4>
+    <ul>
+    <% member.enemies.each do |enemy|%>
+        <li><%= enemy %></li>
+    <% end %>
+    </ul>
+    </div>
+    <div class='affiliation'>
+    <h4>Affiliation</h4>
+    <%=member.affiliation%>
+    </div>
+</section>
 <% end %>
